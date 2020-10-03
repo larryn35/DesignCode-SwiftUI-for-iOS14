@@ -66,9 +66,9 @@
 			children = (
 				460A7EB12527D70900D780C2 /* DesignCodeCourseApp.swift */,
 				461713B4252817E900A74BCF /* Navigation */,
+				463B54C02529102200B183BC /* Model */,
 				461713B72528180200A74BCF /* Items */,
 				460A7EC42527F55000D780C2 /* CoursesView.swift */,
-				463B54BC252853CF00B183BC /* Course.swift */,
 				461713B8252818F500A74BCF /* CourseList.swift */,
 				460A7EB52527D70E00D780C2 /* Assets.xcassets */,
 				460A7EBA2527D70E00D780C2 /* Info.plist */,
@@ -101,6 +101,14 @@
 				460A7EC12527F2F900D780C2 /* CourseRow.swift */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		463B54C02529102200B183BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				463B54BC252853CF00B183BC /* Course.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

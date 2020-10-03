@@ -8,27 +8,45 @@
 import SwiftUI
 
 struct CoursesView: View {
-    @State var show = false
     @Namespace var namespace
+    @State var show = false
+    @State var selectedItem: Course? = nil
+    @State var isDisabled = false // disable cards while transition-out is occuring
     
     var body: some View {
         ZStack {
             ScrollView {
                 VStack(spacing: 20) {
-                    CourseItem()
-                        .matchedGeometryEffect(id: "Card", in: namespace, isSource: !show)
-                        .frame(width: 335, height: 250)
-                    CourseItem()
-                        .frame(width: 335, height: 250)
-
+                    ForEach(courses) { item in
+                        CourseItem(course: item)
+                            .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
+                            .frame(width: 335, height: 250)
+                            .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                                withAnimation(.spring()) {
+                                    show.toggle()
+                                    selectedItem = item
+                                    isDisabled = true
+                                }
+                            })
+                            .disabled(isDisabled)
+                    }
                 }
                 .frame(maxWidth: .infinity)
             }
-            if show {
+            if selectedItem != nil {
                 ScrollView {
-                    CourseItem()
-                        .matchedGeometryEffect(id: "Card", in: namespace)
+                    CourseItem(course: selectedItem!) // can force unwrap due to if selectedItem != nil conditional
+                        .matchedGeometryEffect(id: selectedItem!.id, in: namespace)
                         .frame(height: 300)
+                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                            withAnimation(.spring()) {
+                                show.toggle()
+                                selectedItem = nil
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    isDisabled = false
+                                }
+                            }
+                        })
                     VStack {
                         ForEach(0 ..< 20) { item in
                             CourseRow()
@@ -54,11 +72,6 @@ struct CoursesView: View {
             }
             
         }
-        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-            withAnimation(.spring()) {
-                show.toggle()
-            }
-        })
     }
 }
 
