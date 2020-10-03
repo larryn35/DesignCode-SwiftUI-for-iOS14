@@ -16,6 +16,7 @@
 		460A7EC82527F6B400D780C2 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A7EC72527F6B400D780C2 /* Sidebar.swift */; };
 		461713B22528168A00A74BCF /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461713B12528168A00A74BCF /* CourseItem.swift */; };
 		461713B9252818F600A74BCF /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461713B8252818F500A74BCF /* CourseList.swift */; };
+		463B54BD252853CF00B183BC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54BC252853CF00B183BC /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		460A7EC72527F6B400D780C2 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		461713B12528168A00A74BCF /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
 		461713B8252818F500A74BCF /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
+		463B54BC252853CF00B183BC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				461713B4252817E900A74BCF /* Navigation */,
 				461713B72528180200A74BCF /* Items */,
 				460A7EC42527F55000D780C2 /* CoursesView.swift */,
+				463B54BC252853CF00B183BC /* Course.swift */,
 				461713B8252818F500A74BCF /* CourseList.swift */,
 				460A7EB52527D70E00D780C2 /* Assets.xcassets */,
 				460A7EBA2527D70E00D780C2 /* Info.plist */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463B54BD252853CF00B183BC /* Course.swift in Sources */,
 				460A7EC82527F6B400D780C2 /* Sidebar.swift in Sources */,
 				461713B22528168A00A74BCF /* CourseItem.swift in Sources */,
 				460A7EB42527D70900D780C2 /* ContentView.swift in Sources */,
