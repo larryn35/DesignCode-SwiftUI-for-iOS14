@@ -11,11 +11,34 @@ struct CoursesView: View {
     @Namespace var namespace
     @State var show = false
     @State var selectedItem: Course? = nil
-    @State var isDisabled = false // disable cards while transition-out is occuring
+    @State var isDisabled = false
     
     var body: some View {
         ZStack {
-            ScrollView {
+            #if os(iOS)
+            content
+                .navigationBarHidden(true)
+            fullContent
+                .background(VisualEffectBlur(blurStyle: .systemMaterial).edgesIgnoringSafeArea(.all))
+            #else
+            content
+            fullContent
+                .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
+            #endif
+        }
+        .navigationBarTitle("Courses")
+    }
+    
+    var content: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                Text("Courses")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 16)
+                    .padding(.top, 54)
+                
                 LazyVGrid(
                     columns: [GridItem(.adaptive(minimum: 160), spacing: 16)],
                     spacing: 16
@@ -39,26 +62,44 @@ struct CoursesView: View {
                 }
                 .padding(16)
                 .frame(maxWidth: .infinity)
-            }
-            .zIndex(1.0)
-            if selectedItem != nil {
-                ZStack(alignment: .topTrailing) {
-                    CourseDetail(course: selectedItem!, namespace: namespace)
-                    
-                    CloseButton()
-                        .padding(.trailing, 16)
-                        .onTapGesture(count: 1, perform: {
-                            withAnimation(.spring()) {
-                                show.toggle()
-                                selectedItem = nil
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    isDisabled = false
-                                }
-                            }
-                        })
+                
+                Text("Latest Sections")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 240))]) {
+                    ForEach(courseSections) { item in
+                        CourseRow(item: item)
+                    }
                 }
-                .zIndex(2)
+                .padding()
             }
+        }
+        .zIndex(1.0)
+    }
+    
+    @ViewBuilder
+    var fullContent: some View {
+        if selectedItem != nil {
+            ZStack(alignment: .topTrailing) {
+                CourseDetail(course: selectedItem!, namespace: namespace)
+                
+                CloseButton()
+                    .padding(16)
+                    .onTapGesture(count: 1, perform: {
+                        withAnimation(.spring()) {
+                            show.toggle()
+                            selectedItem = nil
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                isDisabled = false
+                            }
+                        }
+                    })
+            }
+            .zIndex(2)
+            .frame(maxWidth: 712)
+            .frame(maxWidth: .infinity)
         }
     }
 }
