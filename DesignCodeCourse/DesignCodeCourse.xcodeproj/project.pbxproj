@@ -18,6 +18,14 @@
 		461713B9252818F600A74BCF /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461713B8252818F500A74BCF /* CourseList.swift */; };
 		463B54BD252853CF00B183BC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54BC252853CF00B183BC /* Course.swift */; };
 		463B54C4252932F100B183BC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54C3252932F100B183BC /* CloseButton.swift */; };
+		463B54C72529530800B183BC /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54C62529530700B183BC /* CourseDetail.swift */; };
+		463B54D02529542900B183BC /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54C92529542600B183BC /* Download.swift */; };
+		463B54D12529542900B183BC /* LivestreamSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54CA2529542700B183BC /* LivestreamSection.swift */; };
+		463B54D22529542900B183BC /* TutorialSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54CB2529542700B183BC /* TutorialSection.swift */; };
+		463B54D32529542900B183BC /* GradientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54CC2529542800B183BC /* GradientModel.swift */; };
+		463B54D42529542900B183BC /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54CD2529542800B183BC /* Tutorial.swift */; };
+		463B54D52529542900B183BC /* Livestream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54CE2529542800B183BC /* Livestream.swift */; };
+		463B54D62529542900B183BC /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B54CF2529542800B183BC /* CourseSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,14 @@
 		461713B8252818F500A74BCF /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		463B54BC252853CF00B183BC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		463B54C3252932F100B183BC /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		463B54C62529530700B183BC /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
+		463B54C92529542600B183BC /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Download.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/Download.swift"; sourceTree = "<group>"; };
+		463B54CA2529542700B183BC /* LivestreamSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LivestreamSection.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/LivestreamSection.swift"; sourceTree = "<group>"; };
+		463B54CB2529542700B183BC /* TutorialSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSection.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/TutorialSection.swift"; sourceTree = "<group>"; };
+		463B54CC2529542800B183BC /* GradientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientModel.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/GradientModel.swift"; sourceTree = "<group>"; };
+		463B54CD2529542800B183BC /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tutorial.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/Tutorial.swift"; sourceTree = "<group>"; };
+		463B54CE2529542800B183BC /* Livestream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Livestream.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/Livestream.swift"; sourceTree = "<group>"; };
+		463B54CF2529542800B183BC /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSection.swift; path = "../../../../../../../../Downloads/SwiftUI iOS 14/Project files/Model/CourseSection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,7 @@
 				463B54C02529102200B183BC /* Model */,
 				461713B72528180200A74BCF /* Items */,
 				460A7EC42527F55000D780C2 /* CoursesView.swift */,
+				463B54C62529530700B183BC /* CourseDetail.swift */,
 				463B54C3252932F100B183BC /* CloseButton.swift */,
 				461713B8252818F500A74BCF /* CourseList.swift */,
 				460A7EB52527D70E00D780C2 /* Assets.xcassets */,
@@ -110,6 +127,13 @@
 			isa = PBXGroup;
 			children = (
 				463B54BC252853CF00B183BC /* Course.swift */,
+				463B54CF2529542800B183BC /* CourseSection.swift */,
+				463B54C92529542600B183BC /* Download.swift */,
+				463B54CC2529542800B183BC /* GradientModel.swift */,
+				463B54CE2529542800B183BC /* Livestream.swift */,
+				463B54CA2529542700B183BC /* LivestreamSection.swift */,
+				463B54CD2529542800B183BC /* Tutorial.swift */,
+				463B54CB2529542700B183BC /* TutorialSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,13 +209,21 @@
 			files = (
 				463B54BD252853CF00B183BC /* Course.swift in Sources */,
 				460A7EC82527F6B400D780C2 /* Sidebar.swift in Sources */,
+				463B54D02529542900B183BC /* Download.swift in Sources */,
+				463B54D32529542900B183BC /* GradientModel.swift in Sources */,
+				463B54D42529542900B183BC /* Tutorial.swift in Sources */,
 				461713B22528168A00A74BCF /* CourseItem.swift in Sources */,
+				463B54D22529542900B183BC /* TutorialSection.swift in Sources */,
+				463B54D62529542900B183BC /* CourseSection.swift in Sources */,
+				463B54D52529542900B183BC /* Livestream.swift in Sources */,
+				463B54C72529530800B183BC /* CourseDetail.swift in Sources */,
 				463B54C4252932F100B183BC /* CloseButton.swift in Sources */,
 				460A7EB42527D70900D780C2 /* ContentView.swift in Sources */,
 				460A7EC22527F2F900D780C2 /* CourseRow.swift in Sources */,
 				460A7EB22527D70900D780C2 /* DesignCodeCourseApp.swift in Sources */,
 				460A7EC52527F55000D780C2 /* CoursesView.swift in Sources */,
 				461713B9252818F600A74BCF /* CourseList.swift in Sources */,
+				463B54D12529542900B183BC /* LivestreamSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
